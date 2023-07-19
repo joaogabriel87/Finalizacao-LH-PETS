@@ -1,0 +1,49 @@
+@model IEnumerable<ClienteModel>
+
+@{
+    ViewData["Title"] = "Clientes";
+}
+<div class="container">
+
+<div class="text-center">
+<h1>Clientes</h1>
+<div div class="d-grid gap-2">
+<a button type="button" class="btn btn-success" asp-controller="Cliente" asp-action="Cadastrar">Novo cliente</a> 
+</div> 
+</div>
+
+<table id = "Cliente" class="table table-success table-striped-columns mt-5">
+  <thead>
+    <tr>
+      
+      <th scope="col">Nome</th>
+      <th scope="col">Pet</th>
+      <th scope="col">Email</th>
+      <th scope="col">CPF</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+
+    @if (Model != null)
+    {
+        @foreach (var Cliente in Model)
+        {
+      <tr>
+      <th scope="row">@Cliente.Nome</th>
+      <td>@Cliente.Paciente</td>
+      <td>@Cliente.Email</td>
+      <td>@Cliente.Cpf</td>
+      <td>
+      <a button type="button" class="btn btn-primary" asp-controller="Cliente" asp-action="Editar" asp-route-id="@Cliente.Id">Editar</a>
+      <a button type="button" class="btn btn-danger" asp-controller="Cliente" asp-action="Excluir" asp-route-id="@Cliente.Id">Excluir</a>  
+      </td>
+    </tr>
+        }
+    }
+    
+    
+  </tbody>
+</table>
+
+</div>

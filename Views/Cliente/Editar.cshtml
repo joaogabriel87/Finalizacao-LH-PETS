@@ -1,0 +1,35 @@
+@model ClienteModel
+
+@{
+    ViewData["Title"] = "Edição";
+}
+<div class="container bg-light p-5 rounded-5">
+
+    <div class="mb-5 text-center">
+        <h1>Editar</h1>
+    </div>
+
+<form method="post" asp-controller="Cliente" asp-action="Editar">
+    <input type="hidden" asp-for="Id"/>
+  <div class="mb-3">
+    <label for="Cliente" class="form-label">Cliente</label>
+    <input type="text" class="form-control" asp-for="Nome" id="Nome" placeholder="Digite o nome do cliente">
+  <div class="mb-3">
+    <label for="Paciente" class="form-label">Paciente</label>
+    <input type="text" class="form-control" asp-for="Paciente" id="Paciente" placeholder="Digite o nome do Pet">
+  </div>
+  <div class="mb-3">
+    <label for="Cpf" class="form-label">CPF</label>
+    <input type="text" class="form-control" asp-for="Cpf"id="Cpf" placeholder="Digite o CPF">
+  </div>
+  <div class="mb-3">
+    <label for="Email" class="form-label">Email</label>
+    <input type="Email" class="form-control" asp-for="Email" id="Email" placeholder="Digite o email">
+  </div>
+  <div class="d-grid gap-2">
+  <button type="submit" class="btn btn-success">Editar</button>
+  <a button type="button" class="btn btn-primary" asp-controller="Cliente" asp-action="Index">Voltar</a>
+
+  </div>
+</form>
+</div>

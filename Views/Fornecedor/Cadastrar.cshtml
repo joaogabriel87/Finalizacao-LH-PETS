@@ -1,0 +1,34 @@
+@model ForncedorModel
+
+@{
+    ViewData["Title"] = "Cadastro";
+}
+<div class="container bg-light p-5 rounded-5">
+
+    <div class="mb-5 text-center">
+        <h1>Cadastrar</h1>
+    </div>
+
+<form method="post" asp-controller="Fornecedor" asp-action="Cadastrar">
+  <div class="mb-3">
+    <label for="Fornecedora" class="form-label">Fornecedora</label>
+    <input type="text" class="form-control" asp-for="Fornecedora" id="Fornecedora" placeholder="Digite o nome da Fornecedora">
+  <div class="mb-3">
+    <label for="CNPJ" class="form-label">CNPJ</label>
+    <input type="text" class="form-control" asp-for="Cnpj" id="Cnpj" placeholder="Digite o CNPJ">
+  </div>
+  <div class="mb-3">
+    <label for="Email" class="form-label">Email</label>
+    <input type="Email" class="form-control" asp-for="Email" id="Email" placeholder="Digite o email">
+  </div>
+  <div class="mb-3">
+    <label for="Tipo" class="form-label">Fornecimento </label>
+    <input type="text" class="form-control" asp-for="Tipo" id="Tipo" placeholder="Digite os fornecimentos">
+  </div>
+  <div class="d-grid gap-2">
+  <button type="submit" class="btn btn-success">Criar</button>
+  <a button type="button" class="btn btn-primary" asp-controller="Fornecedor" asp-action="Index">Voltar</a>
+
+  </div>
+</form>
+</div>

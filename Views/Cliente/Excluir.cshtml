@@ -1,0 +1,38 @@
+@model ClienteModel
+
+@{
+    ViewData["Title"] = "Excluir";
+}
+<div class="container bg-light p-5 rounded-5">
+
+    <div class="mb-5 text-center">
+        <h1>Excluir</h1>
+    </div>
+
+<form method="post" asp-controller="Cliente" asp-action="Excluir">
+    <input type="hidden" asp-for="Id" />
+    <div class="text-center">
+        <h2 class="text-danger">Tem certeza que deseja excluir?</h2>
+    </div>
+  <div class="mb-3">
+    <label for="Cliente" class="form-label">Cliente</label>
+    <input type="text" class="form-control" asp-for="Nome" id="Nome" placeholder="Digite o nome do cliente" disabled>
+  <div class="mb-3">
+    <label for="Paciente" class="form-label">Paciente</label>
+    <input type="text" class="form-control" asp-for="Paciente" id="Paciente" placeholder="Digite o nome do Pet" disabled>
+  </div>
+  <div class="mb-3">
+    <label for="Cpf" class="form-label">CPF</label>
+    <input type="text" class="form-control" asp-for="Cpf"id="Cpf" placeholder="Digite o CPF" disabled>
+  </div>
+  <div class="mb-3">
+    <label for="Email" class="form-label">Email</label>
+    <input type="Email" class="form-control" asp-for="Email" id="Email" placeholder="Digite o email" disabled>
+  </div>
+  <div class="d-grid gap-2">
+  <button type="submit" class="btn btn-success">Deletar</button>
+  <a button type="button" class="btn btn-primary" asp-controller="Cliente" asp-action="Index">Voltar</a>
+
+  </div>
+</form>
+</div>

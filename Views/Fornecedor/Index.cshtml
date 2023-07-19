@@ -1,0 +1,50 @@
+@model IEnumerable<ForncedorModel>
+
+@{
+    ViewData["Title"] = "Fornecedores";
+}
+<div class="container">
+
+<div class="text-center">
+<h1>Fornecedores</h1>
+<div div class="d-grid gap-2">
+<a button type="button" class="btn btn-success" asp-controller="Fornecedor" asp-action="Cadastrar">Novo Fornecedor</a> 
+</div> 
+</div>
+
+<table id = "Cliente" class="table table-success table-striped-columns mt-5">
+  <thead>
+    <tr>
+      
+      <th scope="col">Fornecedora</th>
+      <th scope="col">CNPJ</th>
+      <th scope="col">Email</th>
+      <th scope="col">Tipo</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+
+    @if (Model != null)
+    {
+        @foreach (var Fornecedor in Model)
+        {
+      <tr>
+
+      <td>@Fornecedor.Fornecedora</td>
+      <td>@Fornecedor.Cnpj</td>
+      <td>@Fornecedor.Email</td>
+      <td>@Fornecedor.Tipo</td>
+      <td>
+      <a button type="button" class="btn btn-primary" asp-controller="Fornecedor" asp-action="Editar" asp-route-id="@Fornecedor.Id">Editar</a>
+      <a button type="button" class="btn btn-danger" asp-controller="Fornecedor" asp-action="Excluir" asp-route-id="@Fornecedor.Id">Excluir</a>  
+      </td>
+    </tr>
+        }
+    }
+    
+    
+  </tbody>
+</table>
+
+</div>
